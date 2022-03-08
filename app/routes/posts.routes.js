@@ -18,12 +18,9 @@ router.get('/:id', getpost , (req, res) => {
 
 router.post('/',verifyToken, async (req, res) => {
     const post = new post({
-        title: req.body.title,
-        category: req.body.category,
-        description: req.body.description,
+        postText: req.body.postText,
         img: req.body.img,
-       price: req.body.price,
-       created_by: req.userId
+        created_by: req.userId
     })
     try{
         const newpost = await post.save()
@@ -37,22 +34,12 @@ router.patch('/:id',[getpost,verifyToken], async (req, res) => {
     if( res.post.created_by != req.userId){
         return res.status(401).send({ message: "Unauthorized!" });
     }
-    if(req.body.title !=null){
-        res.post.title =  req.body.title
-    }
-    if(req.body.category !=null){
-        res.post.category =  req.body.category
-    }
-    if(req.body.description !=null){
-        res.post.description =  req.body.description
+    if(req.body.postText !=null){
+        res.post.postText =  req.body.postText
     }
     if(req.body.img !=null){
         res.post.img =  req.body.img
-    }
-    if(req.body.price !=null){
-        res.post.price =  req.body.price
-    }
-    
+    } 
     try{
         const updatedpost = await res.post.save()
         res.json(updatedpost)

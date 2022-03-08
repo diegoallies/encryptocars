@@ -1,18 +1,18 @@
-GET http://localhost:8999/users/6218be31b86000072206ea8b
+GET https://encryptogram-backend.herokuapp.com/users
 
 ###
 GET http://localhost:8999/users
 
 
 ###
-POST http://localhost:8999/users/signup
+POST http://localhost:8999/users/signin
 Content-Type: application/json
 
 {
-        "fullname":"aashcxrsdsad",
-        "password":"Allisjhfcg7es",
-        "email": "asdajasfhxgsd@gmail.com",
-        "phone_number": "0684305634"
+        "fullname":"Diego Allies",
+        "password":"Encrypto@27",
+        "email": "dallies2727@gmail.com",
+        "phone_number": "0684005634"
 
 }
 

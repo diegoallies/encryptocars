@@ -7,10 +7,10 @@ GET http://localhost:8999/posts
 ###
 POST http://localhost:8999/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMTYxM2RhM2ExNmIxMWU4MmQ3YjJjMSIsImlhdCI6MTY0NTc3NDQwMSwiZXhwIjoxNjQ1ODYwODAxfQ.GQmBZKkwHt2Lu_kcKkvBkRpsBG2MmpbMVBTn6KcQwqk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3Mzk2MjYsImV4cCI6MTY0NjgyNjAyNn0.hZ36p6Pps0x9b8J1WpESb7jI5EP9Lfz3m2L3xftaYMA
 
 {
-        "title":"bmw",
+        "postText":"bmw",
         "category": "car",
         "description":"black",
         "img": "jhkhkhdcxs",
