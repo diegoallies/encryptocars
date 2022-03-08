@@ -15,49 +15,9 @@ app.get('/',(req,res)=>{
      res.send({message:`
      
      
-        Welcome to EncryptoGram Backend
+        Welcome to EncryptoGram Backend - created,managed and owned by Diego
 
-        {
-            "name": "encryptogram-backend",
-            "version": "1.0.0",
-            "description": "Backend of my online social media platform EncryptoGram",
-            "main": "server.js",
-            "scripts": {
-              "test": "echo \"Error: no test specified\" && exit 1"
-            },
-            "repository": {
-              "type": "git",
-              "url": "git+https://github.com/diegoallies/encryptoGramBackend.git"
-            },
-            "keywords": [
-              "node.js",
-              "|",
-              "express",
-              "|",
-              "mongoose",
-              "|",
-              "bcrypt",
-              "|",
-              "jsonwebtoken",
-              "|",
-              "cors"
-            ],
-            "author": "Diego Jay Allies",
-            "license": "ISC",
-            "bugs": {
-              "url": "https://github.com/diegoallies/encryptoGramBackend/issues"
-            },
-            "homepage": "https://github.com/diegoallies/encryptoGramBackend#readme",
-            "dependencies": {
-              "bcrypt": "^5.0.1",
-              "cors": "^2.8.5",
-              "dotenv": "^16.0.0",
-              "express": "^4.17.3",
-              "jsonwebtoken": "^8.5.1",
-              "mongoose": "^6.2.4",
-              "nodemon": "^2.0.15"
-            }
-          }
+       
           
      
      `})
