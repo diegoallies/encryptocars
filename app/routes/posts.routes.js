@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const post = require('../models/post')
+const post = require('../models/posts')
 const verifyToken = require('../middleware/auth.jwt')
 
 router.get('/', async (req, res) => {
