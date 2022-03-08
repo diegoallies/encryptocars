@@ -1,18 +1,23 @@
-const post = require('../models/posts')
- 
-getPost =  async (req, res, next) => {
-   let post
-  try{
-      post = await post.findById(req.params.id)
-     if(post == null){
-         return res.status(404).json({ message:'This post could not be found' })
-     } 
-  } catch (err) {
-      return res.status(500).json({ message: err.message })
+const jwt = require("jsonwebtoken");
+
+verifyToken = (req, res, next) => {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+  if(!token) {
+    return res.status(403).send({
+      message: "No token provided!"
+    });
   }
+  jwt.verify(token ,process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({
+        message: "Unauthorized!"
+      });
+    }
+    req.userId = decoded._id;
+    req.cart = decoded.cart;
+    next();
+  });
+};
 
-  res.post = post
-  next()
-}
-
-module.exports = getPost
+module.exports = verifyToken;
