@@ -11,7 +11,7 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database Successfully'))
 
 app.get('/',(req,res)=>{
-     res.send({message:"Welcome to Diego and Sive application"})
+     res.send({message:"Welcome to Diego's application"})
  })
 app.use(express.json())
 app.use(cors())
