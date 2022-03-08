@@ -1,4 +1,4 @@
-GET http://localhost:8999/posts 
+GET http://localhost:8999/posts/62275938d23a21ae9b31b051
 
 ###
 GET http://localhost:8999/posts
@@ -10,12 +10,15 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3NDAwNzksImV4cCI6MTY0NjgyNjQ3OX0._n2T9tf230N76tF76bcZNuKPD69c61jx5C36l3UQ6vY
 
 {
-        "postText":"bmw",
-        "img": "jhkhkhdcxs"
+    "img": "https://ti.postimg.cc/wjk4cgx7/hags.jpg",
+    "postText": "hey , sexe my new wallpaper"
 }
 
 ###
-DELETE http://localhost:8999/posts
+DELETE http://localhost:8999/posts/62275938d23a21ae9b31b051
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3NDAwNzksImV4cCI6MTY0NjgyNjQ3OX0._n2T9tf230N76tF76bcZNuKPD69c61jx5C36l3UQ6vY
+
 
 ###
 PATCH http://localhost:8999/posts

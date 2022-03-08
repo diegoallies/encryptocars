@@ -1,71 +1,82 @@
 const express = require('express')
 const router = express.Router()
-const post = require('../models/posts')
+const Post = require('../models/posts')
 const verifyToken = require('../middleware/auth.jwt')
 
 router.get('/', async (req, res) => {
    try {
-    const posts = await post.find()
+    const posts = await Post.find()
     res.json(posts)
    } catch (err) {
     res.status(500).json({ message: err.message })
    }
 })
 
-router.get('/:id', getpost , (req, res) => {
+router.get('/:id', getPost , (req, res) => {
     res.json(res.post)
 })
 
 router.post('/',verifyToken, async (req, res) => {
-    const posts = new post({
+    const post = new Post({
         postText: req.body.postText,
+        category: req.body.category,
+        description: req.body.description,
         img: req.body.img,
+       price: req.body.price,
        created_by: req.userId
     })
     try{
-        const newpost = await posts.save()
-        res.status(201).json(newpost)
+        const newPost = await post.save()
+        res.status(201).json(newPost)
     } catch(err){
         res.status(400).json({ message: err.message })
     }
 })
 
-router.patch('/:id',[getpost,verifyToken], async (req, res) => {
-
+router.patch('/:id',[getPost,verifyToken], async (req, res) => {
     if( res.post.created_by != req.userId){
         return res.status(401).send({ message: "Unauthorized!" });
     }
     if(req.body.postText !=null){
         res.post.postText =  req.body.postText
     }
+    if(req.body.category !=null){
+        res.post.category =  req.body.category
+    }
+    if(req.body.description !=null){
+        res.post.description =  req.body.description
+    }
     if(req.body.img !=null){
         res.post.img =  req.body.img
     }
+    if(req.body.price !=null){
+        res.post.price =  req.body.price
+    }
     
     try{
-        const updatedpost = await res.post.save()
-        res.json(updatedpost)
+        const updatedPost = await res.post.save()
+        res.json(updatedPost)
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
 })
 
-router.delete('/:id',[getpost,verifyToken], async (req, res) => {
+router.delete('/:id',[getPost,verifyToken], async (req, res) => {
     try{
         if( res.post.created_by != req.userId){
             return res.status(401).send({ message: "Unauthorized!" });
         }
         await res.post.remove()
-        res.json({ message:'Deleted post'})
+        res.json({ message:'Deleted Post'})
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
 }) 
 
-async function getpost  (req, res, next){
+async function getPost  (req, res, next){
     let post
    try{
-       post = await post.findById(req.params.id)
+       post = await Post.findById(req.params.id)
       if(post == null){
           return res.status(404).json({ message:'Cannot find post' })
       } 

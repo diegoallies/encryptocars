@@ -1,9 +1,9 @@
-const post = require('../models/posts')
+const Post = require('../models/posts')
  
 getPost =  async (req, res, next) => {
    let post
   try{
-      post = await post.findById(req.params.id)
+      post = await Post.findById(req.params.id)
      if(post == null){
          return res.status(404).json({ message:'This post could not be found' })
      } 

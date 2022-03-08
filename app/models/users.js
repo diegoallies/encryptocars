@@ -20,12 +20,8 @@ const userSchema = new mongoose.Schema({
     join_date:{
         type: String,
         default: Date.now
-    },
-    userPost:{
-        type: Array,
-        required: false,
-        default:[]
     }
+
 })
 
 module.exports = mongoose.model('User',userSchema)

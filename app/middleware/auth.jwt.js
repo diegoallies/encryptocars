@@ -15,7 +15,6 @@ verifyToken = (req, res, next) => {
       });
     }
     req.userId = decoded._id;
-    req.userPost = decoded.userPost;
     next();
   });
 };
