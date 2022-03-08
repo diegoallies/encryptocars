@@ -5,16 +5,13 @@ GET http://localhost:8999/posts
 
 
 ###
-POST http://localhost:8999/posts
+POST https://encryptogram-backend.herokuapp.com/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3Mzk2MjYsImV4cCI6MTY0NjgyNjAyNn0.hZ36p6Pps0x9b8J1WpESb7jI5EP9Lfz3m2L3xftaYMA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3NDAwNzksImV4cCI6MTY0NjgyNjQ3OX0._n2T9tf230N76tF76bcZNuKPD69c61jx5C36l3UQ6vY
 
 {
         "postText":"bmw",
-        "category": "car",
-        "description":"black",
-        "img": "jhkhkhdcxs",
-        "price": 1200.00
+        "img": "jhkhkhdcxs"
 }
 
 ###

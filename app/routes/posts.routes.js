@@ -20,7 +20,7 @@ router.post('/',verifyToken, async (req, res) => {
     const post = new post({
         postText: req.body.postText,
         img: req.body.img,
-        created_by: req.userId
+       created_by: req.userId
     })
     try{
         const newpost = await post.save()
@@ -31,6 +31,7 @@ router.post('/',verifyToken, async (req, res) => {
 })
 
 router.patch('/:id',[getpost,verifyToken], async (req, res) => {
+    
     if( res.post.created_by != req.userId){
         return res.status(401).send({ message: "Unauthorized!" });
     }
@@ -39,7 +40,8 @@ router.patch('/:id',[getpost,verifyToken], async (req, res) => {
     }
     if(req.body.img !=null){
         res.post.img =  req.body.img
-    } 
+    }
+    
     try{
         const updatedpost = await res.post.save()
         res.json(updatedpost)
