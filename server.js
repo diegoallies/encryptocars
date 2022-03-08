@@ -16,9 +16,10 @@ app.get('/',(req,res)=>{
 app.use(express.json())
 app.use(cors())
 
-const usersRouter = require('./app/routes/user.routes.js')
+const usersRouter = require('./app/')
 app.use('/users', usersRouter)
-const productsRouter = require('./app/routes/products.routes.js')
-app.use('/products', productsRouter)
+
+const postsRouter = require('./app/routes/posts.routes.js')
+app.use('/posts', postsRouter)
 
 app.listen(process.env.PORT || 8999, () => console.log('Server Started'))
