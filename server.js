@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
 app.use(express.json())
 app.use(cors())
 
-const usersRouter = require('./app/')
+const usersRouter = require('/app/routes/user.routes.js')
 app.use('/users', usersRouter)
 
 const postsRouter = require('./app/routes/posts.routes.js')
