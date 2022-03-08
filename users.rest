@@ -1,4 +1,4 @@
-GET https://encryptogram-backend.herokuapp.com/users
+GET https://encryptogram-backend.herokuapp.com/users/62273e8aaa19a51877c29ef2
 
 ###
 GET http://localhost:8999/users
