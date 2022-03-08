@@ -12,15 +12,7 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database Successfully'))
 
 app.get('/',(req,res)=>{
-     res.send({message:`
-     
-     
-        Welcome to EncryptoGram Backend - created,managed and owned by Diego
-
-       
-          
-     
-     `})
+     res.send({message:`Welcome to EncryptoGram Backend - created,managed and owned by Diego`})
  })
 app.use(express.json())
 app.use(cors())
