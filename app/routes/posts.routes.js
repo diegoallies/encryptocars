@@ -17,13 +17,13 @@ router.get('/:id', getpost , (req, res) => {
 })
 
 router.post('/',verifyToken, async (req, res) => {
-    const post = new post({
+    const posts = new post({
         postText: req.body.postText,
         img: req.body.img,
        created_by: req.userId
     })
     try{
-        const newpost = await post.save()
+        const newpost = await posts.save()
         res.status(201).json(newpost)
     } catch(err){
         res.status(400).json({ message: err.message })
@@ -31,7 +31,7 @@ router.post('/',verifyToken, async (req, res) => {
 })
 
 router.patch('/:id',[getpost,verifyToken], async (req, res) => {
-    
+
     if( res.post.created_by != req.userId){
         return res.status(401).send({ message: "Unauthorized!" });
     }
