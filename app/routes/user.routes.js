@@ -38,14 +38,14 @@ router.post('/signup',Duplicates, async (req, res) => {
 
 router.post('/signin', async (req, res) => {
     try{ 
-      User.findOne({ fullname: req.body.fullname} , (err, customer) => {
+      User.findOne({ email: req.body.email} , (err, user) => {
           if(err) return handleError(err);
-      if (!customer) {
+      if (!user) {
         return res.status(404).send({ message: "User Not found." });
       }
       let passwordIsValid = bcrypt.compareSync(
         req.body.password,
-        customer.password
+        user.password
       );
       if (!passwordIsValid) {
         return res.status(401).send({
@@ -54,13 +54,13 @@ router.post('/signin', async (req, res) => {
         });
       }
       
-      let token = jwt.sign({ _id:  customer._id, post: customer.post }, process.env.ACCESS_TOKEN_SECRET, {
+      let token = jwt.sign({ _id:  user._id, post: user.post }, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: 86400 // 24 hours
       });
       res.status(200).send({
-        _id:  customer._id,
-        username:  customer.username,
-        email:  customer.email,
+        _id:  user._id,
+        fullname:  user.fullname,
+        email:  user.email,
         accessToken: token
       });
     })
