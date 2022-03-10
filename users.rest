@@ -1,15 +1,15 @@
-GET https://encryptogram-backend.herokuapp.com/users
+GET https://encryptogram-backend.herokuapp.com/62273e8aaa19a51877c29ef2
 
 ###
-GET http://localhost:8999/users
+GET http://localhost:8999/users/62273e8aaa19a51877c29ef2
 
 
 ###
-POST http://localhost:8999/users/signup
+POST http://localhost:8999/users/signin
 Content-Type: application/json
 
 {
-    "email": "dallies27272@gmail.com",
+    "email": "dallies2727@gmail.com",
     "password":"Encrypto@27",
     "phone_number":"0282726161",
     "fullname":"just a test"
