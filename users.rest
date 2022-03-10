@@ -5,12 +5,14 @@ GET http://localhost:8999/users
 
 
 ###
-POST http://localhost:8999/users/signin
+POST http://localhost:8999/users/signup
 Content-Type: application/json
 
 {
-    "email": "dallies2727@gmail.com",
-    "password":"Encrypto@27"
+    "email": "dallies27272@gmail.com",
+    "password":"Encrypto@27",
+    "phone_number":"0282726161",
+    "fullname":"just a test"
         
 
 }

@@ -7,11 +7,10 @@ GET http://localhost:8999/posts
 ###
 POST http://localhost:8999/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY3NDAwNzksImV4cCI6MTY0NjgyNjQ3OX0._n2T9tf230N76tF76bcZNuKPD69c61jx5C36l3UQ6vY
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjlhMzdhYTc0MWVkNjZjNDk2ZjciLCJpYXQiOjE2NDY5MDM3NTgsImV4cCI6MTY0Njk5MDE1OH0.i0VpU1cY4y3PVHcDEUVYJgMvkMzcJWBmKFvXp08xpR8
 {
     "img": "https://ti.postimg.cc/wjk4cgx7/hags.jpg",
-    "postText": "hey , sexe my new wallpaper"
+    "postText": "hey , sexe my newh wallpaper"
 }
 
 ###
