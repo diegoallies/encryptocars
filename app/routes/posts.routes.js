@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../models/posts')
+const User = require('../models/users')
 const verifyToken = require('../middleware/auth.jwt')
 
 router.get('/', async (req, res) => {
@@ -17,13 +18,16 @@ router.get('/:id', getPost , (req, res) => {
 })
 
 router.post('/',verifyToken, async (req, res) => {
+  
     const post = new Post({
         postText: req.body.postText,
-        category: req.body.category,
-        description: req.body.description,
         img: req.body.img,
-       price: req.body.price,
+
        created_by: req.userId
+    //    userName: req.User
+
+  
+    
     })
     try{
         const newPost = await post.save()
@@ -40,17 +44,8 @@ router.patch('/:id',[getPost,verifyToken], async (req, res) => {
     if(req.body.postText !=null){
         res.post.postText =  req.body.postText
     }
-    if(req.body.category !=null){
-        res.post.category =  req.body.category
-    }
-    if(req.body.description !=null){
-        res.post.description =  req.body.description
-    }
     if(req.body.img !=null){
         res.post.img =  req.body.img
-    }
-    if(req.body.price !=null){
-        res.post.price =  req.body.price
     }
     
     try{
@@ -87,5 +82,22 @@ async function getPost  (req, res, next){
    res.post = post
    next()
 }
+
+
+
+// async function getUser (req, res, next){
+//     let userName
+//    try{
+//        userName = await User.findById(req.user.fullname)
+//       if(userName == null){
+//           return res.status(404).json({ message:'This user could not be found' })
+//       } 
+//    } catch (err) {
+//        return res.status(500).json({ message: err.message })
+//    }
+ 
+//    res.userName = userName
+//    next()
+//  }
 
 module.exports = router
