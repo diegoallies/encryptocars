@@ -22,9 +22,10 @@ router.post('/',verifyToken, async (req, res) => {
     const post = new Post({
         postText: req.body.postText,
         img: req.body.img,
+        fullname: req.body.fullname,
 
        created_by: req.userId
-    //    userName: req.User
+    
 
   
     

@@ -14,12 +14,13 @@ const postSchema = new mongoose.Schema({
     created_by: {
         type: String,
         required: true
+    },
+
+    fullname: {
+        type: String,
+        required: true
     }
 
-    // userrName: {
-    //     type: String,
-    //     required: true
-    // }
 })
 
 module.exports = mongoose.model('Post',postSchema)

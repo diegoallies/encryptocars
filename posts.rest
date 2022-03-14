@@ -7,11 +7,12 @@ GET http://localhost:8999/posts
 ###
 POST http://localhost:8999/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI4YjlhMzdhYTc0MWVkNjZjNDk2ZjciLCJpYXQiOjE2NDY5MDM3NTgsImV4cCI6MTY0Njk5MDE1OH0.i0VpU1cY4y3PVHcDEUVYJgMvkMzcJWBmKFvXp08xpR8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDcyNDIwMjQsImV4cCI6MTY0NzMyODQyNH0.Qn691XhC8-u2KGAeH8CLSG5l0AMT2taCjzRSYbDo_LE
 
 {
     "img": "https://ti.postimg.cc/wjk4cgx7/hags.jpg",
-    "postText": "hey , see my newh wallpaper"
+    "postText": "hey , see my newh wallpaper",
+    "fullname": "Alex Sexwale"
   
 }
 
