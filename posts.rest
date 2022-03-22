@@ -7,12 +7,13 @@ GET http://localhost:8999/posts
 ###
 POST http://localhost:8999/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDcyNDIwMjQsImV4cCI6MTY0NzMyODQyNH0.Qn691XhC8-u2KGAeH8CLSG5l0AMT2taCjzRSYbDo_LE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDc1MTYzMjMsImV4cCI6MTY0NzYwMjcyM30.K9ou6m9WBJGlgfjpjgIGQrJMdIEpQL5v-k5lObgKADM
 
 {
     "img": "https://ti.postimg.cc/wjk4cgx7/hags.jpg",
     "postText": "hey , see my newh wallpaper",
     "fullname": "Alex Sexwale"
+
   
 }
 
@@ -20,9 +21,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4Y
 DELETE http://localhost:8999/posts/62275aca5d5afe9a493aa4cd
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDY5MDQyNTQsImV4cCI6MTY0Njk5MDY1NH0.dovA2dDZZYcaK-aNZDaE46ndgjGetcp17Di-5IF0R38
 ###
-PATCH http://localhost:8999/posts
+PATCH http://localhost:8999/posts/622f3100f90c550e3ac82aaf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjI3M2U4YWFhMTlhNTE4NzdjMjllZjIiLCJpYXQiOjE2NDc5MzU3MTIsImV4cCI6MTY0ODAyMjExMn0.uGGt4hfbuzHR8p_mtOC_sbE27IdXDVtTejr7E7MY30E
 Content-Type: application/json
 
 {
-    "name":"new post"
+    "postText":"new post"
 }

@@ -85,20 +85,4 @@ async function getPost  (req, res, next){
 }
 
 
-
-// async function getUser (req, res, next){
-//     let userName
-//    try{
-//        userName = await User.findById(req.user.fullname)
-//       if(userName == null){
-//           return res.status(404).json({ message:'This user could not be found' })
-//       } 
-//    } catch (err) {
-//        return res.status(500).json({ message: err.message })
-//    }
- 
-//    res.userName = userName
-//    next()
-//  }
-
 module.exports = router
