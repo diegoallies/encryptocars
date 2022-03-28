@@ -1,7 +1,7 @@
-GET https://encryptogram-backend.herokuapp.com/62273e8aaa19a51877c29ef2
+GET https://encryptogram-backend.herokuapp.com/users/
 
 ###
-GET http://localhost:8999/users/62273e8aaa19a51877c29ef2
+GET http://localhost:8999/users/
 
 
 ###
@@ -9,8 +9,8 @@ POST http://localhost:8999/users/signin
 Content-Type: application/json
 
 {
-    "email": "dallies2727@gmail.com",
-    "password":"Encrypto@27",
+    "email": "admin@gmail.com",
+    "password":"12345678",
     "phone_number":"0282726161",
     "fullname":"just a test"
         
@@ -22,8 +22,9 @@ Content-Type: application/json
 DELETE http://localhost:8999/users/6218bc42f12ac86552779f89
 
 ###
-PATCH http://localhost:8999/users/6218be31b86000072206ea8b
+PATCH http://localhost:8999/users/6228b9a37aa741ed66c496f7
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNjNjRlN2RjNTkyZDE0OTU2M2FlYjIiLCJpYXQiOjE2NDgxMzA0ODgsImV4cCI6MTY0ODIxNjg4OH0.Fe81aFiINVMGBXdbG-Z3GbrZdQS9Gwvw9_QaajbDOEw
 
 {
     "fullname":"master encrypto"
