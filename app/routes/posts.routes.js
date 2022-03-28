@@ -20,14 +20,16 @@ router.get('/:id', getPost , (req, res) => {
 router.post('/',verifyToken, async (req, res) => {
   
     const post = new Post({
-        postText: req.body.postText,
+        title: req.body.title,
         img: req.body.img,
         fullname: req.body.fullname,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+
 
        created_by: req.userId
-    
 
-  
     
     })
     try{
@@ -42,8 +44,17 @@ router.patch('/:id',[getPost,verifyToken], async (req, res) => {
     if( res.post.created_by != req.userId){
         return res.status(401).send({ message: "Unauthorized!" });
     }
-    if(req.body.postText !=null){
-        res.post.postText =  req.body.postText
+    if(req.body.title !=null){
+        res.post.title =  req.body.title
+    }
+    if(req.body.price !=null){
+        res.post.price =  req.body.price
+    }
+    if(req.body.description !=null){
+        res.post.description =  req.body.description
+    }
+    if(req.body.category !=null){
+        res.post.category =  req.body.category
     }
     if(req.body.img !=null){
         res.post.img =  req.body.img
