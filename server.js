@@ -22,9 +22,6 @@ app.use('/users', usersRouter)
 const postsRouter = require('./app/routes/posts.routes.js')
 app.use('/posts', postsRouter)
 
-const postsRouter = require('./app/routes/posts.routes.js')
-app.use('/posts', postsRouter)
-
 const cartRouter = require('./app/routes/cart.routes.js')
 app.use('/cart', cartRouter)
 
