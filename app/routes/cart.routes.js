@@ -25,7 +25,7 @@ router.post("/:id", [auth, getProduct], async (req, res, next) => {
   let img = res.post.img;
   let price = res.post.price;
   let quantity = req.body;
-  let user_id = req.user._id;
+  let user_id = req.userId;
   const carts = new Cart({
 
    post_id,
@@ -69,7 +69,7 @@ router.delete('/single', auth, async(req, res, next)=>{
 
 router.delete("/", auth, async (req, res, next) => {
   try {
-    const cart = await Cart.deleteMany({ user_id: { $regex: req.user._id } });
+    const cart = await Cart.deleteMany({ user_id: { $regex: req.userId } });
     res.json({ message: "Deleted cart" });
   } catch (error) {
     res.status(500).json({ message: error.message });
