@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const Cart = require("../models/cart");
-const User = require("../models/user");
 var ObjectId = require('mongodb').ObjectId;
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-
-const { getUser, getProduct } = require("../middleware/finders");
-
 
 router.get("/", auth, async (req, res, next) => {
   try {
