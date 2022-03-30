@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../middleware/auth");
+const auth = require("../middleware/auth.jwt");
 const Cart = require("../models/cart");
 var ObjectId = require('mongodb').ObjectId;
 
