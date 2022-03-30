@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth.jwt");
+const User = require('../models/users');
 const Post = require('../models/posts');
 const Cart = require("../models/cart");
 var ObjectId = require('mongodb').ObjectId;
 
 router.get("/", auth, async (req, res, next) => {
   try {
-    const cart = await Cart.find({ user_id: { $regex: req.user._id } });
+    const cart = await Cart.find({ user_id: { $regex: req.userId } });
     res.status(201).json(cart);
   } catch (error) {
     res.status(500).json({ message: error.message });

@@ -1,0 +1,14 @@
+
+POST http://encryptocars-backend.herokuapp.com/cart/6241b91cb18aced964e814f9
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNkYjc2YTAzMTI4ZDIwOWZiM2M3OTAiLCJpYXQiOjE2NDg2NDczNjAsImV4cCI6MTY0ODczMzc2MH0.bgni6ItZM7_JktzQGMVJ9CMjjQpj0ufPEt0lki9tKYQ
+
+{
+    "quantity" : "1"
+        
+}
+
+###
+
+get http://encryptocars-backend.herokuapp.com/cart
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNkYjc2YTAzMTI4ZDIwOWZiM2M3OTAiLCJpYXQiOjE2NDg2NDczNjAsImV4cCI6MTY0ODczMzc2MH0.bgni6ItZM7_JktzQGMVJ9CMjjQpj0ufPEt0lki9tKYQ
