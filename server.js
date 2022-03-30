@@ -22,4 +22,10 @@ app.use('/users', usersRouter)
 const postsRouter = require('./app/routes/posts.routes.js')
 app.use('/posts', postsRouter)
 
+const postsRouter = require('./app/routes/posts.routes.js')
+app.use('/posts', postsRouter)
+
+const cartRouter = require('./app/routes/cart.routes.js')
+app.use('/cart', cartRouter)
+
 app.listen(process.env.PORT || 8999, () => console.log('Server Started'))
